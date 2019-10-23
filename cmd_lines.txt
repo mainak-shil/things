@@ -1,0 +1,35 @@
+kill a server local : sudo kill -9 `sudo lsof -t -i:8081`
+----------------------------------------------------
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.2",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.2"
+  },
+----------------------------------------------------
+import React from 'react';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import Home from '../screens/home/Home';
+import Login from '../screens/login/Login';
+
+const HomeStack = createStackNavigator({
+  Home: {
+    screen: Home,
+  },
+});
+
+const LoginStack = createStackNavigator({
+  Login: {
+    screen: Login,
+  },
+});
+
+const AppMainNavigator = createSwitchNavigator({
+  Login: LoginStack,
+  Home: HomeStack,
+});
+
+export default createAppContainer(AppMainNavigator);
+
