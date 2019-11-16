@@ -7,7 +7,11 @@ kill a server local : sudo kill -9 `sudo lsof -t -i:8081`
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.2"
   },
-----------------------------------------------------
+---------------------------------------------------
+    VALID_NAME : "^[a-zA-Z ]+$",
+    VALID_EMAIL : "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$",
+    VALID_PASSWORD : "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,20}$", 
+---------------------------------------------------
 import React from 'react';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
